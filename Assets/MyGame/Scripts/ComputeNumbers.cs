@@ -7,12 +7,21 @@ public class ComputeNumbers : MonoBehaviour
     public InputField input2;
     public Text result;
 
+    public Button calculateButton;
+    public Button resetButton;
+
     float varA;
     float varB;
 
     public void SetResult()
     {
         result.text = CalculateNumbers();
+
+        input1.gameObject.SetActive(false);
+        input2.gameObject.SetActive(false);
+
+        resetButton.gameObject.SetActive(true);
+        calculateButton.gameObject.SetActive(false);
     }
 
     string CalculateNumbers()
@@ -26,18 +35,25 @@ public class ComputeNumbers : MonoBehaviour
         }
         else
         {
-            varA = float.Parse(input1.text);
-            varB = float.Parse(input2.text);
+            varA = Mathf.RoundToInt(float.Parse(input1.text));
+            varB = Mathf.RoundToInt(float.Parse(input2.text));
 
-            string outputSuccess = (varA - varB).ToString();
+            string outputSuccess = (varA + varB).ToString();
             return outputSuccess;
         }
     }
 
     public void ResetApp()
     {
-        input1.text = "";
-        input2.text = "";
+        input1.gameObject.SetActive(true);
+        input2.gameObject.SetActive(true);
+
+        calculateButton.gameObject.SetActive(true);
+
+        input1.text = "0";
+        input2.text = "0";
         result.text = "";
+
+        resetButton.gameObject.SetActive(false);
     }
 }
