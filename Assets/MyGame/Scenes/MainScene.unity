@@ -231,6 +231,8 @@ MonoBehaviour:
   input1: {fileID: 1268387159}
   input2: {fileID: 957920662}
   result: {fileID: 1465676970}
+  calculateButton: {fileID: 351063902}
+  resetButton: {fileID: 513638615}
 --- !u!4 &84019900
 Transform:
   m_ObjectHideFlags: 0
@@ -474,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &513638614
 RectTransform:
   m_ObjectHideFlags: 0
